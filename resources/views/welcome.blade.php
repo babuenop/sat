@@ -6,6 +6,8 @@
 
         <title>Sat Panama</title>
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
@@ -64,16 +66,25 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Sat Panama
-                </div>
-
-
+        @include('layouts.navbars.navbar')    
+        <div class="container">
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <h2>Menu App</h2>
             </div>
-        </div>
+            <!-- Inicio del Formulario para agregar usuarios -->
+                <div class="card-header border-0 shadow">
+                    <div class="card-body">
+                        <!-- Valida que se ingresen todos los campos del formulario -->
+                            @if($errors->any())
+                            <div class="alert alert-default">
+                                @foreach($errors-> all() as $error)
+                                    - {{ $error }} <br>
+                                @endforeach
+                            </div>
+                            @endif
+                        <!-- Fin de la validación -->
+                    <!-- Inicio del formulario -->
+                                
+        
     </body>
 </html>
