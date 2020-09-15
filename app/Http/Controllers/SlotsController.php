@@ -14,7 +14,7 @@ class SlotsController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -35,7 +35,23 @@ class SlotsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'serie'         =>  'required',
+            'fabricante'    =>  'required',
+            'posicionGic'   =>  'required',
+            'sociedad'      =>  'required',
+            'mueble'      =>  'required',
+            'modelo'      =>  'required',
+            'estado'      =>  'required',
+            'fechaFabricacion'      =>  'required',
+            'centro'      =>  'required',
+            'subdivision'      =>  'required',
+            'participado'      =>  'required',
+            'fechaDeIngreso'      =>  'required',
+            'fechaDeSalida'      =>  'required',
+            'origen'      =>  'required',
+            'destino'      =>  'required'
+        ]);
     }
 
     /**

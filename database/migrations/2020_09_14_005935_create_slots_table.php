@@ -15,7 +15,21 @@ class CreateSlotsTable extends Migration
     {
         Schema::create('slots', function (Blueprint $table) {
             $table->id();
+            $table->string("serie");
             $table->string("fabricante");
+            $table->string("posicionGic");
+            $table->string("sociedad");
+            $table->string("mueble");
+            $table->string("modelo");
+            $table->string("estado");	
+            $table->string("fechaFabricacion");
+            $table->string("centro");
+            $table->string("subdivision");
+            $table->string("participado");	
+            $table->string("fechaDeIngreso");	
+            $table->string("fechaDeSalida");	
+            $table->string("origen");	
+            $table->string("destino");
             $table->timestamps();
         });
     }
