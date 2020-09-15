@@ -67,6 +67,7 @@
     </head>
     <body>
         @include('layouts.navbars.navbar')    
+<<<<<<< HEAD
 
         <main role="main">
 
@@ -216,6 +217,8 @@
         </div>
 
 </main>
+=======
+>>>>>>> 1f59f074c8e897f377232651cdbfa5d9ae93c21e
         
     </body>
 </html>
