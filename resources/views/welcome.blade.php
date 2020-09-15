@@ -67,24 +67,6 @@
     </head>
     <body>
         @include('layouts.navbars.navbar')    
-        <div class="container">
-            <div class="shadow p-3 mb-5 bg-white rounded">
-                <h2>Menu App</h2>
-            </div>
-            <!-- Inicio del Formulario para agregar usuarios -->
-                <div class="card-header border-0 shadow">
-                    <div class="card-body">
-                        <!-- Valida que se ingresen todos los campos del formulario -->
-                            @if($errors->any())
-                            <div class="alert alert-default">
-                                @foreach($errors-> all() as $error)
-                                    - {{ $error }} <br>
-                                @endforeach
-                            </div>
-                            @endif
-                        <!-- Fin de la validación -->
-                    <!-- Inicio del formulario -->
-                                
         
     </body>
 </html>
