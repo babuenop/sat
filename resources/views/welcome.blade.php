@@ -25,15 +25,15 @@
             header {
                 margin: 1rem 0 0;
                 font-size: .9rem;
-                padding: 0 0 2rem 0;
-                border-bottom: 3pt solid #009688;
+                padding: 0 0 1rem 0;
+                border-bottom: 2pt solid #1ab394;
             }
 
             h1 {
                 margin: 0;
                 padding: 0;
                 font-size: 2rem;
-                color: #009688;
+                color: #1ab394;
                 display: block;
                 font-size: 2em;
                 margin-block-start: 0.67em;
@@ -94,8 +94,8 @@
         <form>
         <div class="container">
         <header class="row">
-            <div class="logoholder text-center">
-            <img src="img/slots.jpg" width="200" height="100">
+            <div class="logoholder text-center" background="dark">
+            <img src="img/logo.jpg" width="140" height="40">
             </div>
             
             <div class="col-4">
@@ -109,10 +109,8 @@
             
             <div class="col-4">
                 <p contenteditable="">
-                Datos bacarios: <br>
-                Titular de la cuenta: <br>
-                IBAN: <br>
-                BIC:
+                Fecha: <br>
+                Acta: <br>
                 </p>
             </div>
             </div>
@@ -120,23 +118,42 @@
 
     <div class="row section">
         <div class="container">
-            <div class="col-2">
+            <div class="col-12">
                 <h1>Salidas de Almacen</h1>
             </div>
         </div>
-        <div class="container">
-            <div class="col-2">
-                <h1>Salidas de Almacen</h1>
-            </div>
-        </div>
-        
     </div>
-
+    <table class="table" table-bordered="">
+				<thead>
+					<tr>
+					<th>Codigo</th>
+					<th>Descripcion</th>
+					<th>Proveedor</th>
+					<th>Estado</th>
+					<th>Cantidad</th>
+					<th>Revisado Por</th>
+					<th>Editar</th>
+					<th>Borrar</th>
+					</tr>
+				</thead>  
+			<tbody>
+				<tr>
+				<td>47792</td>
+				<td>MON-LCD. TL ,NON-LIT 19 INCH DT-TS TOVIS</td>
+				<td>IGT</td>
+				<td>REPARADO</td>
+				<td>10</td>
+				<td>FERNANDEZ ARQUIÑEZ ADALBERTO </td>
+				<td><a href="editar.php?IdActa=678&amp;Codigo=47792"><img src="../img/edit.png" width="25" height="25"></a></td>
+				<td><a href="php/BorrarMaterial.php?IdActa=678&amp;Codigo=47792"><img src="../img/del.png" width="25" height="25"></a></td>
+				
+			</tr></tbody>  
+			
+			</tr></tbody></table>
         </form>
     </div>
 
-    senseimasu09@gmail.com
-    
+  
 
   
 </main>
