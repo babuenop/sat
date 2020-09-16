@@ -28,12 +28,7 @@
             </li> -->
             </ul>
             <form class="form-inline my-2 my-lg-0">
-<<<<<<< HEAD
             
-=======
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
->>>>>>> 1f59f074c8e897f377232651cdbfa5d9ae93c21e
             </form>
         </div>
         </nav>
