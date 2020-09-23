@@ -17,6 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/slots', "slotsController@index");
 
-
+Route::get('/materiales', "MaterialesController@index");
