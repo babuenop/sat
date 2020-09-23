@@ -238,6 +238,9 @@
 			
 		</tr>
     </table>
+
+
+
     </div>
  
 </main>
@@ -247,3 +250,4 @@
 
 
 <!-- https://sistemasdemos.com/gratis/sales_invoice/ -->
+<!-- https://richos.gitbooks.io/laravel-5/content/anexos/crud.html -->
