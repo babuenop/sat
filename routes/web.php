@@ -14,8 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/materiales', function () {
     return view('materiales');
 });
 
 
-Route::get('/materiales', "MaterialesController@index");
+
+
