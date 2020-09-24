@@ -17,10 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/materiales', function () {
-    return view('materiales');
-});
+Route::get('materiales', 'MaterialesController@index');
 
-
-
-
+Auth::routes();
+Route::get('/login', 'LoginController@index')->name('login');

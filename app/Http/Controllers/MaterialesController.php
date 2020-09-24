@@ -23,6 +23,26 @@ class MaterialesController extends Controller
      */
     public function index()
     {
-        return view('materiales');
+        // $materiales = Material::get();
+        return view('materiales.index');//->with('materiales', $materiales);
     }
+
+    public function create()
+    {
+        return view('materiales.create');
+    }
+
+    public function store(Request $request)
+    {
+        $material = new Pastel;
+        $material->material = $request->input('material');
+        $material->descripcion  = $request->input('descripcion');
+        $material->grupoArticulos  = $request->input('grupoArticulos');
+
+        $material->save();
+
+        return redirect()->route('pasteles.index');
+    }
+
+
 }
