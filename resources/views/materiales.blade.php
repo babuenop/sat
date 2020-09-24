@@ -140,85 +140,109 @@
             }
         </style>
     </head>
-    <body>
+<body>
         @include('layouts.navbars.navbar')    
 
-<main role="main">
+    <main role="main">
 
 
-    <div class="container">
-        <form>
         <div class="container">
-        <header class="row">
-            <div class="logoholder text-center" background="dark">
-            <img src="img/logo.jpg" width="140" height="40">
-            </div>
+            <form>
+            <div class="container">
+            <header class="row">
+                <div class="logoholder text-center" background="dark">
+                <img src="img/logo.jpg" width="140" height="40">
+                </div>
 
-        </header>
+            </header>
 
-    <div class="row section">
-        <div class="container">
-            <div class="col-12">
-                <h1>Salidas de Almacen</h1>
+        <div class="row section">
+            <div class="container">
+                <div class="col-12">
+                    <h1>Inventario de Materiales</h1>
+                </div>
             </div>
         </div>
-    </div>
-    
-<div>
-<div class="row">
-    <div class="col-6">
-        <p contenteditable="" class="client">
-            <strong>Origen</strong><br>
-            Nombre cliente<br>
-            Nombre emmpresa<br>
-            Dirección empresa<br>
-            Tel empresa
-        </p>
+
+        <form>
+        <div class="jumbotron">
+            <h3 class="display-6">Crear Material</h3>
+            <div class="form-row">
+                <div class="col">
+                <input type="text" class="form-control" placeholder="No. Material">
+                </div>
+                <div class="col">
+                <input type="text" class="form-control" placeholder="Descripcion">
+                </div>
+            </div>
+            <p></p>
+            <div class="form-row">
+                <div class="col">
+                <select id="Categoria" name="Categoria" placeholder="Categoria" class="form-control input-md" required="" type="text">
+             	    <option selected=""></option>
+                    <option value="" select=""></option> 
+                    <option value="BILLETEROS">BILLETEROS</option>
+                    <option value="CPU">CPU</option>
+                    <option value="FUENTES">FUENTES</option>
+                    <option value="IMPRESORAS">IMPRESORAS</option>
+                    <option value="MONITORES">MONITORES</option> 
+                    <option value="PULSADORES">PULSADORES</option>
+                    <option value="TARJETAS DE JUEGO">TARJETAS DE JUEGO</option>
+                    <option value="TARJETAS DE VIDEO">TARJETAS DE VIDEO</option>
+                    <option value="TARJETAS DE COMUNICACION">TARJETAS DE COMUNICACION</option>
+                    <option value="TECLADOS">TECLADOS</option>
+                    <option value="TOUCH SCREEN">TOUCH SCREEN</option>
+		     </select>
+                </div>
+                <div class="col">
+                <input type="text" class="form-control" placeholder="Numero de Parte">
+                </div>
+            </div>
+            <p></p>
+            <div class="form-row">
+                <div class="col">
+                <input type="text" class="form-control" placeholder="Fabricante">
+                </div>
+                <div class="col">
+                <input type="text" class="form-control" placeholder="Modificado el">
+                </div>
+            </div>
+            <p></p>
+            <a class="btn btn-secondary btn-xs" href="#" role="button">Crear</a>
+
+        </form>
     </div>
 
-    <div class="col-6">
-        <p contenteditable="" class="client">
-            <strong>Destino</strong><br>
-            [Nombre cliente]<br>
-            [Nombre emmpresa]<br>
-            [Dirección empresa]<br>
-            [Tel empresa]
-        </p>
-    </div>
-    </div>
-</div>
-<br>
 
     <table class="blueTable" table-bordered="">
 		<thead>
 			<tr>
 				<th>Codigo</th>
 				<th>Descripcion</th>
-				<th>Proveedor</th>
-				<th>Estado</th>
-				<th>Cantidad</th>
-				<th>Revisado Por</th>
+				<th>Categoria</th>
+				<th>Numero de Parte</th>
+				<th>Fabricante</th>
+				<th>Fecha Modificacion</th>
 			</tr>
 		</thead>  
 			<tbody>
 				<tr>
 		    		<td>47792</td>
 	    			<td>MON-LCD. TL ,NON-LIT 19 INCH DT-TS TOVIS</td>
-    				<td>IGT</td>
-				    <td>REPARADO</td>
-				    <td>10</td>
-				    <td>FERNANDEZ ARQUIÑEZ ADALBERTO </td>
+    				<td>Monitores</td>
+				    <td>47592</td>
+				    <td>IGT</td>
+				    <td>01/02/2020</td>
 			    </tr>
             </tbody>  
 			
 		</tr>
     </table>
-        </form>
+
+
+
     </div>
-
-  
-
-  
+ 
 </main>
         
     </body>
@@ -226,3 +250,4 @@
 
 
 <!-- https://sistemasdemos.com/gratis/sales_invoice/ -->
+<!-- https://richos.gitbooks.io/laravel-5/content/anexos/crud.html -->

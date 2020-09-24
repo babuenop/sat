@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class slots extends Model
+class material extends Model
 {
     //
 }

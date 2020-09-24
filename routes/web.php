@@ -17,3 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/materiales', function () {
+    return view('materiales');
+});
+
+
+
+
