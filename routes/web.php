@@ -19,5 +19,8 @@ Route::get('/', function () {
 
 Route::get('materiales', 'MaterialesController@index');
 
+
+
 Auth::routes();
-Route::get('/login', 'LoginController@index')->name('login');
+
+Route::get('/home', 'HomeController@index')->name('home');
