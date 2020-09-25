@@ -9,7 +9,7 @@
 </div>
 
 <div>
-    <a style="margin: 19px;" href="{{ route('materiales.create')}}" class="btn btn-secondary">New contact</a>
+    <a style="margin: 19px;" href="{{ route('contacts.create')}}" class="btn btn-secondary">New contact</a>
     </div>
 
     <div class="row section">
@@ -35,14 +35,14 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($materials as $material)
+        @foreach($contacts as $contact)
         <tr>
-            <td>{{$materials->id}}</td>
-            <td>{{$materials->first_name}} {{$materials->last_name}}</td>
-            <td>{{$materials->email}}</td>
-            <td>{{$materials->job_title}}</td>
-            <td>{{$materials->city}}</td>
-            <td>{{$materials->country}}</td>
+            <td>{{$contact->id}}</td>
+            <td>{{$contact->first_name}} {{$contact->last_name}}</td>
+            <td>{{$contact->email}}</td>
+            <td>{{$contact->job_title}}</td>
+            <td>{{$contact->city}}</td>
+            <td>{{$contact->country}}</td>
             <td>
                 <a href="{{ route('contacts.edit',$contact->id)}}" class="btn btn-secondary">Edit</a>
             </td>

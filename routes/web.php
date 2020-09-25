@@ -21,8 +21,8 @@ Route::get('welcome', function () {
     return view('welcome');
 });
 
+Route::resource('materiales', 'MaterialController');
+Route::resource('contacts', 'ContactController');
 
-Route::get('materiales', 'MaterialesController@index');
-Route::post('materiales', 'MaterialesController@store')->name('materiales.store');
 
 

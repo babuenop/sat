@@ -4,9 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class materiales extends Model
+class Material extends Model
 {
     protected $fillable = [
-        'material','descripcion','grupoArticulos',
+        'material',
+        'descripcion',
+        'grupoArticulos',
     ];
 }
