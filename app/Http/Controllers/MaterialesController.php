@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\materiales;
 
 class MaterialesController extends Controller
 {
@@ -24,7 +25,10 @@ class MaterialesController extends Controller
     public function index()
     {
         // $materiales = Material::get();
-        return view('materiales.index');//->with('materiales', $materiales);
+        $materiales= materiales::latest()->get();
+        return view('materiales.index', [
+            'materiales'=> $materiales
+        ]);
     }
 
     public function create()
@@ -34,14 +38,23 @@ class MaterialesController extends Controller
 
     public function store(Request $request)
     {
-        $material = new Pastel;
-        $material->material = $request->input('material');
-        $material->descripcion  = $request->input('descripcion');
-        $material->grupoArticulos  = $request->input('grupoArticulos');
+        $request->validate([
+            'material'      => 'required',
+            'descripcion'      => 'required',
+            'grupoArticulos'      => 'required',
+        ]);
 
-        $material->save();
-
-        return redirect()->route('pasteles.index');
+        // $request->validate([
+        //     'name' => 'required',
+        //     'email' => 'required|email|unique:users',
+        //     'password' => 'required|min:8',
+        // ]);
+        materiales::create ([
+                'material' => $request ->material,
+                'descripcion' => $request ->descripcion,
+                'grupoArticulos' => $request ->grupoArticulos,
+        ]);
+        return back();
     }
 
 

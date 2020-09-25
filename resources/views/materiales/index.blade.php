@@ -162,84 +162,61 @@
                     <h1>Inventario de Materiales</h1>
                 </div>
             </div>
+        </div>     
+     
+        <div class="jumbotron">
+            <form action="{{route('materiales.store')}}" method="POST">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="material" class="form-control" placeholder="No Material" value="{{old('material')}}">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="descripcion" class="form-control" placeholder="Descripcion" value="{{old('descripcion')}}">                            </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="grupoArticulos" class="form-control" placeholder="Proveedor"value="{{old('grupoArticulos')}}">
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                    <div class="form-group">
+                        @csrf
+                            <button type="submit" class="btn btn btn-success ">Enviar</button>
+                    </div>
+                    </div>
+                </div>
+            </form>
         </div>
 
-        <form>
-        <div class="jumbotron">
-            <h3 class="display-6">Crear Material</h3>
-            <div class="form-row">
-                <div class="col">
-                <input type="text" class="form-control" placeholder="No. Material">
-                </div>
-                <div class="col">
-                <input type="text" class="form-control" placeholder="Descripcion">
-                </div>
-            </div>
-            <p></p>
-            <div class="form-row">
-                <div class="col">
-                <select id="Categoria" name="Categoria" placeholder="Categoria" class="form-control input-md" required="" type="text">
-             	    <option selected=""></option>
-                    <option value="" select=""></option> 
-                    <option value="BILLETEROS">BILLETEROS</option>
-                    <option value="CPU">CPU</option>
-                    <option value="FUENTES">FUENTES</option>
-                    <option value="IMPRESORAS">IMPRESORAS</option>
-                    <option value="MONITORES">MONITORES</option> 
-                    <option value="PULSADORES">PULSADORES</option>
-                    <option value="TARJETAS DE JUEGO">TARJETAS DE JUEGO</option>
-                    <option value="TARJETAS DE VIDEO">TARJETAS DE VIDEO</option>
-                    <option value="TARJETAS DE COMUNICACION">TARJETAS DE COMUNICACION</option>
-                    <option value="TECLADOS">TECLADOS</option>
-                    <option value="TOUCH SCREEN">TOUCH SCREEN</option>
-		     </select>
-                </div>
-                <div class="col">
-                <input type="text" class="form-control" placeholder="Numero de Parte">
-                </div>
-            </div>
-            <p></p>
-            <div class="form-row">
-                <div class="col">
-                <input type="text" class="form-control" placeholder="Fabricante">
-                </div>
-                <div class="col">
-                <input type="text" class="form-control" placeholder="Modificado el">
-                </div>
-            </div>
-            <p></p>
-            <a class="btn btn-secondary btn-xs" href="#" role="button">Crear</a>
 
-        </form>
-    </div>
-
-
-    <table class="blueTable" table-bordered="">
-		<thead>
-			<tr>
-				<th>Codigo</th>
-				<th>Descripcion</th>
-				<th>Categoria</th>
-				<th>Numero de Parte</th>
-				<th>Fabricante</th>
-				<th>Fecha Modificacion</th>
-			</tr>
-		</thead>  
-			<tbody>
-				<tr>
-		    		<td>47792</td>
-	    			<td>MON-LCD. TL ,NON-LIT 19 INCH DT-TS TOVIS</td>
-    				<td>Monitores</td>
-				    <td>47592</td>
-				    <td>IGT</td>
-				    <td>01/02/2020</td>
-			    </tr>
-            </tbody>  
-			
-		</tr>
-    </table>
-
-
+        <table class="blueTable" table-bordered="">
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Descripcion</th>
+                    <th>Categoria</th>
+                </tr>
+            </thead>  
+                <tbody>
+                @foreach($materiales as $materiales)
+                    <tr>
+                        <td>{{$materiales->material}}</td>
+                        <td>{{$materiales->descripcion}}</td>
+                        <td>{{$materiales->grupoArticulos}}</td>
+                    </tr>
+                @endforeach
+                </tbody>  
+                
+            </tr>
+        </table>
 
     </div>
  
