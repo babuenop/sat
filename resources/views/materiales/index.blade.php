@@ -141,7 +141,7 @@
         </style>
     </head>
 <body>
-        @include('layouts.navbars.navbar')    
+@include('layouts.navbars.navbar')    
 
     <main role="main">
 

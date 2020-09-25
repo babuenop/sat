@@ -17,10 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/materiales', function () {
-    return view('materiales');
-});
+Route::get('materiales', 'MaterialesController@index');
 
 
 
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
