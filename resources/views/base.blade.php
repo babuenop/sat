@@ -31,6 +31,14 @@
             img {
                 border: 0
             }
+            table {
+                width: 60%;
+            }
+            tr, td {
+                font-size: 14px;
+                padding: 1px;
+            }
+
 
             h1 {
                 margin: 0;
@@ -46,51 +54,6 @@
                 font-weight: bold;
             }
 
-            table.blueTable {
-                
-                width: 100%;
-                text-align: left;
-                border-collapse: collapse;
-            }
-            table.blueTable td, table.blueTable th {
-                border: 1px solid #AAAAAA;
-                padding: 3px 2px;
-            }
-            table.blueTable tbody td {
-                font-size: 12px;
-            }
-            
-            table.blueTable thead {
-                background: #444444;
-                border-bottom: 2px solid #444444;
-            }
-            table.blueTable thead th {
-                font-size: 12px;
-                color: #FFFFFF;
-                
-            }
-            table.blueTable thead th:first-child {
-                border-left: none;
-            }
-
-            table.blueTable tfoot {
-                font-size: 12px;           
-                color: #FFFFFF;
-                border-top: 2px solid #444444;
-            }
-            table.blueTable tfoot td {
-                font-size: 10px;
-            }
-            table.blueTable tfoot .links {
-                text-align: right;
-            }
-            table.blueTable tfoot .links a{
-                display: inline-block;
-                background: #1C6EA4;
-                color: #FFFFFF;
-                padding: 2px 8px;
-                border-radius: 5px;
-            }
             .client {
                 font-size: 12px;
                 padding: 15px

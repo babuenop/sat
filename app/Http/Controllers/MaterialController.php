@@ -15,7 +15,7 @@ class MaterialController extends Controller
     public function index()
     {     
         $materials = Material::all();
-        return view('materiales.index', compact('materiales'));
+        return view('materiales.index', compact('materials'));
     }
 
     /**
@@ -25,7 +25,7 @@ class MaterialController extends Controller
      */
     public function create()
     {
-        return view('materials.create');
+        return view('materiales.create');
     }
 
     /**
@@ -38,17 +38,14 @@ class MaterialController extends Controller
      public function store(Request $request)
     {
         $request->validate([
-            'first_name'=>'required',
-            'last_name'=>'required',
-            'email'=>'required'
+            'material'=>'required',
+            'descripcion'=>'required',
+            'grupoArticulos'=>'required'
         ]);
         $Material = new Material([
-            'first_name' => $request->get('first_name'),
-            'last_name' => $request->get('last_name'),
-            'email' => $request->get('email'),
-            'job_title' => $request->get('job_title'),
-            'city' => $request->get('city'),
-            'country' => $request->get('country')
+            'material' => $request->get('material'),
+            'descripcion' => $request->get('descripcion'),
+            'grupoArticulos' => $request->get('grupoArticulos'),
         ]);
         $Material->save();
         return redirect('/materiales')->with('success', 'Material saved!');
@@ -73,8 +70,8 @@ class MaterialController extends Controller
      */
     public function edit($id)
     {
-        $Material = Material::find($id);
-        return view('materials.edit', compact('Material'));
+        $material = Material::find($id);
+        return view('materiales.edit', compact('material'));
     }
 
     /**
@@ -87,19 +84,16 @@ class MaterialController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'first_name'=>'required',
-            'last_name'=>'required',
-            'email'=>'required'
+            'material'=>'required',
+            'descripcion'=>'required',
+            'grupoArticulos'=>'required'
         ]);
-        $Material = Material::find($id);
-        $Material->first_name =  $request->get('first_name');
-        $Material->last_name = $request->get('last_name');
-        $Material->email = $request->get('email');
-        $Material->job_title = $request->get('job_title');
-        $Material->city = $request->get('city');
-        $Material->country = $request->get('country');
-        $Material->save();
-        return redirect('/materials')->with('success', 'Material updated!');
+        $material = Material::find($id);
+        $material->material =  $request->get('material');
+        $material->descripcion = $request->get('descripcion');
+        $material->grupoArticulos = $request->get('grupoArticulos');
+        $material->save();
+        return redirect('/materiales')->with('success', 'Material actualizado!');
     }
 
     /**
@@ -112,6 +106,6 @@ class MaterialController extends Controller
     {
         $Material = Material::find($id);
         $Material->delete();
-        return redirect('/materials')->with('success', 'Material deleted!');
+        return redirect('/materiales')->with('success', 'Material deleted!');
     }
 }

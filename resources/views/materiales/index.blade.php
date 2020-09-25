@@ -9,13 +9,13 @@
 </div>
 
 <div>
-    <a style="margin: 19px;" href="{{ route('materiales.create')}}" class="btn btn-secondary">New contact</a>
+    <a style="margin: 19px;" href="{{ route('materiales.create')}}" class="btn btn-secondary">Crear Material</a>
     </div>
-
+<div class="container">
     <div class="row section">
         <div class="container">
             <div class="col-12">
-                <h1>Contactos</h1>
+                <h1>Materiales</h1>
             </div>
         </div>
     </div>
@@ -26,35 +26,36 @@
     <thead>
         <tr>
           <td>ID</td>
-          <td>Name</td>
-          <td>Email</td>
-          <td>Job Title</td>
-          <td>City</td>
-          <td>Country</td>
-          <td colspan = 2>Actions</td>
+          <td>No. Material</td>
+          <td>Descripcion</td>
+          <td>Grupo Articulos</td>
+
+          <td colspan = 2>Acciones</td>
         </tr>
     </thead>
     <tbody>
         @foreach($materials as $material)
         <tr>
-            <td>{{$materials->id}}</td>
-            <td>{{$materials->first_name}} {{$materials->last_name}}</td>
-            <td>{{$materials->email}}</td>
-            <td>{{$materials->job_title}}</td>
-            <td>{{$materials->city}}</td>
-            <td>{{$materials->country}}</td>
+            <td>{{$material->id}}</td>
+            <td>{{$material->material}}</td>
+            <td>{{$material->descripcion}}</td>
+            <td>{{$material->grupoArticulos}}</td>
+
             <td>
-                <a href="{{ route('contacts.edit',$contact->id)}}" class="btn btn-secondary">Edit</a>
+                <a href="{{ route('materiales.edit',$material->id)}}" class="btn btn-secondary">Edit</a>
             </td>
             <td>
-                <form action="{{ route('contacts.destroy', $contact->id)}}" method="post">
+                <form action="{{ route('materiales.destroy', $material->id)}}" method="post">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Delete</button>
+                  <button class="btn btn-danger" type="submit">Borrar</button>
                 </form>
             </td>
         </tr>
         @endforeach
+        </div>
+
+        
     </tbody>
   </table>
 <div>
