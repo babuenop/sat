@@ -23,6 +23,6 @@ Route::get('welcome', function () {
 
 Route::resource('materiales', 'MaterialController');
 Route::resource('contacts', 'ContactController');
-
+Route::resource('slots', 'SlotsController');
 
 
