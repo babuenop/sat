@@ -29,8 +29,8 @@
           <td>No. Material</td>
           <td>Descripcion</td>
           <td>Grupo Articulos</td>
-
-          <td colspan = 2>Acciones</td>
+          
+          <td style="text-align: center;" colspan = 2 >Acciones</td>
         </tr>
     </thead>
     <tbody>
@@ -41,23 +41,26 @@
             <td>{{$material->descripcion}}</td>
             <td>{{$material->grupoArticulos}}</td>
 
-            <td>
-                <a href="{{ route('materiales.edit',$material->id)}}" class="btn btn-secondary">Edit</a>
+            <td style="text-align: center;">
+                <a href="{{ route('materiales.edit',$material->id)}}" class="editBtn">Editar</a>
             </td>
-            <td>
+            <td style="text-align: center;">
                 <form action="{{ route('materiales.destroy', $material->id)}}" method="post">
                   @csrf
                   @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Borrar</button>
+                  <button class="delBtn" type="submit">Borrar</button>
                 </form>
             </td>
         </tr>
         @endforeach
         </div>
 
+
         
     </tbody>
   </table>
+
+  
 <div>
 </div>
 @endsection

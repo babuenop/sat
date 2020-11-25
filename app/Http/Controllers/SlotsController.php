@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Material;
+use App\Slot;
 
-class Slots extends Controller
+class SlotsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class Slots extends Controller
      */
     public function index()
     {
-        $materials = Material::all();
-        return view('slots.index', compact('materials'));
+        $slots = Slot::all();
+        return view('slots.index', compact('slots'));
     }
 
     /**
@@ -25,7 +25,7 @@ class Slots extends Controller
      */
     public function create()
     {
-        //
+        return view('slots.create');
     }
 
     /**
@@ -36,7 +36,31 @@ class Slots extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'id'=>'required',
+            'serie'=>'required',
+            'posicionGic'=>'required'
+        ]);
+        $Slot = new Slot([
+            'id' => $request->get('id'),
+            'serie' => $request->get('serie'),
+            'posicionGic' => $request->get('posicionGic'),
+            'fabricante' => $request ->get('fabricante'),
+            'sociedad' => $request ->get('sociedad'),
+            'mueble' => $request ->get('mueble'),
+            'modelo' => $request ->get('modelo'),
+            'estado' => $request ->get('estado'),
+            'fechaFabricacion' => $request ->get('fechaFabricacion'),
+            'centro' => $request ->get('centro'),
+            'subdivision' => $request ->get('centro'),
+            'participado' => $request ->get('participado'),
+            'fechaDeIngreso' => $request ->get('fechaDeIngreso'),
+            'fechaDeSalida' => $request ->get('fechaDeSalida'),
+            'origen' => $request ->get('origen'),
+            'destino' => $request ->get('destino'),
+        ]);
+        $Slot->save();
+        return redirect('/slots')->with('success', 'Guardado!');
     }
 
     /**

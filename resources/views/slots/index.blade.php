@@ -8,14 +8,19 @@
   @endif
 </div>
 
+
 <div>
-    <a style="margin: 19px;" href="{{ route('materiales.create')}}" class="btn btn-secondary">Crear Material</a>
+    <a style="margin: 19px;" href="{{ route('slots.create')}}" class="btn btn-secondary btn-sm">+</a>
+    </div>
+
+<div>
+    
     </div>
 <div class="container">
     <div class="row section">
         <div class="container">
             <div class="col-12">
-                <h1>Materiales</h1>
+                <h1>Inventario de Maquinas</h1>
             </div>
         </div>
     </div>
@@ -23,33 +28,41 @@
 <div class="row">
 <div class="col-sm-12">
   <table class="table table-striped">
-    <thead>
+    <thead >
         <tr>
-          <td>ID</td>
-          <td>No. Material</td>
-          <td>Descripcion</td>
-          <td>Grupo Articulos</td>
-
-          <td colspan = 2>Acciones</td>
+          <th>ID</th>
+          <th>Serie</th>
+          <th>Fabricante</th>
+          <th>Posicion GIC</th>
+          <th>Mueble</th>
+          <th>Modelo</th>
+          <th>Estado</th>
+          <th>Participado</th>
+          <th colspan = 2 style="text-align: center;">Acciones</th>
         </tr>
     </thead>
     <tbody>
-        @foreach($materials as $material)
+        @foreach($slots as $slot)
         <tr>
-            <td>{{$material->id}}</td>
-            <td>{{$material->material}}</td>
-            <td>{{$material->descripcion}}</td>
-            <td>{{$material->grupoArticulos}}</td>
+            <td>{{$slot->id}}</td>
+            <td>{{$slot->serie}}</td>
+            <td>{{$slot->fabricante}}</td>
+            <td>{{$slot->posicionGic}}</td>
+            <td>{{$slot->mueble}}</td>
+            <td>{{$slot->modelo}}</td>
+            <td>{{$slot->estado}}</td>
+            <td>{{$slot->participado}}</td>
+            
 
-            <td>
-                <a href="{{ route('materiales.edit',$material->id)}}" class="btn btn-secondary">Edit</a>
-            </td>
-            <td>
-                <form action="{{ route('materiales.destroy', $material->id)}}" method="post">
-                  @csrf
-                  @method('DELETE')
-                  <button class="btn btn-danger" type="submit">Borrar</button>
-                </form>
+            <td style="text-align: center;">
+              <a href="#" class="editBtn" >Editar</a>   
+            </td>  
+            <td style="text-align: center;">
+              <form action="" method="post">
+                @csrf
+                @method('DELETE')
+                <button class="delBtn" type="submit">Borrar</button>
+              </form>
             </td>
         </tr>
         @endforeach

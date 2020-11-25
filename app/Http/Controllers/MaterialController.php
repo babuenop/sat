@@ -48,7 +48,7 @@ class MaterialController extends Controller
             'grupoArticulos' => $request->get('grupoArticulos'),
         ]);
         $Material->save();
-        return redirect('/materiales')->with('success', 'Material saved!');
+        return redirect('/materiales')->with('success', 'Material Guardado!');
     }
 
     /**
@@ -106,6 +106,6 @@ class MaterialController extends Controller
     {
         $Material = Material::find($id);
         $Material->delete();
-        return redirect('/materiales')->with('success', 'Material deleted!');
+        return redirect('/materiales')->with('success', 'Material Borrado!');
     }
 }
